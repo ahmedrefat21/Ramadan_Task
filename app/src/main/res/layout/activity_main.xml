@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:paddingStart="24dp"
+    android:paddingTop="24dp"
+    android:paddingEnd="24dp"
+    app:layoutDescription="@xml/activity_main_scene"
+    tools:context=".MainActivity">
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gregorian_date"
+        android:layout_marginTop="100dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/ramadan4" />
+    <TextView
+        android:id="@+id/ramadan_karem_txt"
+        android:text="Ramadan Kareem"
+        style="@style/main.BoldText"
+        android:fontFamily="@font/poppinsbold"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
+
+    <TextView
+        android:id="@+id/hejri_date"
+        style="@style/main.BoldText.daydate"
+        android:text="1 Ramadan, 1444 AH"
+        android:textColor="@color/yellow"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/gregorian_date"
+        style="@style/main.BoldText"
+        android:text="Wednesday, 22 March"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/hejri_date"
+        app:layout_constraintTop_toBottomOf="@+id/hejri_date" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/card"
+        android:padding="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ramadan_karem_txt">
+
+        <TextView
+            android:id="@+id/hadeth_txt"
+            style="@style/main.BoldText"
+            android:text="Prophet Muhammad said:"
+            android:textColor="@color/purple_700"
+            android:textSize="30sp"
+            android:fontFamily="@font/poppinsbold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/hadeth_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="clip_horizontal"
+            android:text="“When Ramadan enters, the gates of Paradise are opened, the gates of Hellfire are closed, and the devils are chained”."
+            android:textSize="16sp"
+            android:textColor="@color/textcolor"
+            android:fontFamily="@font/poppinssemibold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/hadeth_txt"
+            app:layout_constraintTop_toBottomOf="@+id/hadeth_txt" />
+
+        <TextView
+            style="@style/main.BoldText"
+            android:layout_marginTop="16dp"
+            android:gravity="fill_horizontal"
+            android:text="Al-Bukhari and Muslim "
+            android:textColor="@color/background"
+            android:fontFamily="@font/poppinssemibold"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/hadeth_content"
+            app:layout_constraintTop_toBottomOf="@+id/hadeth_content" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/prayertime_card"
+        android:padding="8sp"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+        app:layout_constraintTop_toTopOf="@+id/guideline">
+
+        <TextView
+            android:id="@+id/prayerTime"
+            style="@style/main.BoldText"
+            android:gravity="center"
+            android:text="Prayer Time"
+            android:fontFamily="@font/poppinsbold"
+            android:textColor="@color/purple_700"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fajr"
+            style="@style/main.time"
+            android:text="Fajr"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/prayerTime" />
+
+        <TextView
+            android:id="@+id/fajrTime"
+            style="@style/main.time"
+            android:text="04:30 AM"
+            app:layout_constraintBottom_toBottomOf="@+id/fajr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fajr" />
+
+
+
+        <TextView
+            android:id="@+id/sunrise"
+            style="@style/main.time"
+            android:text="Sunrise"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fajr" />
+
+        <TextView
+            android:id="@+id/sunriseTime"
+            style="@style/main.time"
+            android:text="05:57 AM"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fajr" />
+
+        <TextView
+            android:id="@+id/duhor"
+            style="@style/main.time"
+            android:text="Duhor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sunrise" />
+
+        <TextView
+            android:id="@+id/duhorTime"
+            style="@style/main.time"
+            android:text="12:02 PM"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sunrise" />
+
+
+        <TextView
+            android:id="@+id/Asr"
+            style="@style/main.time"
+            android:text="Asr"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/duhor" />
+
+        <TextView
+            android:id="@+id/asrTime"
+            style="@style/main.time"
+            android:text="03:30 PM"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/duhor" />
+
+
+
+        <TextView
+            android:id="@+id/Maghrib"
+            style="@style/main.time"
+            android:text="Maghrib"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Asr" />
+
+        <TextView
+            style="@style/main.time"
+            android:text="06:07 PM"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/asrTime" />
+
+
+
+        <TextView
+            android:id="@+id/isha"
+            style="@style/main.time"
+            android:text="Isha"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Maghrib" />
+
+        <TextView
+            style="@style/main.time"
+            android:text="07:25 PM"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Maghrib" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:background="@drawable/card"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/imageView44"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu_button"
+            android:src="@drawable/menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>
